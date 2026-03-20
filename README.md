@@ -98,16 +98,34 @@ max_binlog_size   = 100M
 
 ```
 
+<img width="643" height="597" alt="12 06-2 1" src="https://github.com/user-attachments/assets/84395b23-5e1d-4e90-9b2c-bf8f40262c4e" />
 
 
-### Задание 3*. Дополнительные задания (со звёздочкой*) 
+Конфигурация SLAVE сервера:
 
-Выполните конфигурацию master-master репликации. Произведите проверку.
+```
+[mysqld]
+user            = mysql
+pid-file        = /var/run/mysqld/mysqld.pid
+socket  = /var/run/mysqld/mysqld.sock
+datadir = /var/lib/mysql
 
-*Приложите скриншоты конфигурации, выполнения работы: состояния и режимы раб
+bind-address            = 0.0.0.0
+mysqlx-bind-address     = 127.0.0.1
+myisam-recover-options  = BACKUP
+
+log_error = /var/log/mysql/error.log
+slow_query_log          = 1
+server-id               = 2
+read_only = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
+max_binlog_size   = 100M
+
+```
+
+<img width="624" height="704" alt="65412325" src="https://github.com/user-attachments/assets/c2c63bf4-0a70-40af-8ea1-c124307e3162" />
 
 
-### Решение 3
 
 
 

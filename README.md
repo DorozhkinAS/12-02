@@ -76,6 +76,29 @@
 
 ### Решение 2
 
+ Конфигурация MASTER сервера:
+ 
+ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+```
+[mysqld]
+user            = mysql
+pid-file        = /var/run/mysqld/mysqld.pid
+socket  = /var/run/mysqld/mysqld.sock
+datadir = /var/lib/mysql
+
+bind-address            = 0.0.0.0
+mysqlx-bind-address     = 127.0.0.1
+myisam-recover-options  = BACKUP
+
+slow_query_log          = 1
+server-id               = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
+max_binlog_size   = 100M
+
+```
+
+
 
 ### Задание 3*. Дополнительные задания (со звёздочкой*) 
 
